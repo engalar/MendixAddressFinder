@@ -10,12 +10,13 @@
   },
   "license": "all right reserve",
   "config": {
-    "projectPath": "./tests/testProject",
+    "projectPath": "../AddressFinderTestProject",
     "mendixHost": "http://localhost:8080",
     "developmentPort": 3000
   },
   "packagePath": "wengao",
   "scripts": {
+    "vite": "vite",
     "start": "pluggable-widgets-tools start:server",
     "dev": "pluggable-widgets-tools start:web",
     "build": "pluggable-widgets-tools build:web",
@@ -25,7 +26,11 @@
     "release": "pluggable-widgets-tools release:web"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.6",
     "@mendix/pluggable-widgets-tools": "^10.7.1",
+    "vite": "^5.2.10",
     "@types/big.js": "^6.0.2"
   },
   "dependencies": {
