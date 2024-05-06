@@ -1,12 +1,11 @@
-import { ReactElement, createElement, Fragment, useEffect, useState } from "react";
+import { ReactElement, createElement, useEffect, useState } from "react";
 import { AddressFinderContainerProps } from "../typings/AddressFinderProps";
 
 import "./ui/AddressFinder.css";
-import { Country, WidgetInput } from "react-addressfinder";
+import { Address, Country, WidgetInput } from "react-addressfinder";
+import classNames from "classnames";
 
-export function AddressFinder({ sampleText }: AddressFinderContainerProps): ReactElement {
-    console.log("AddressFinder.sampleText", sampleText);
-    // state loaded
+export function AddressFinder(props: AddressFinderContainerProps): ReactElement {
     const [loaded, setLoaded] = useState(false);
     useEffect(() => {
         // @ts-ignore
@@ -21,21 +20,28 @@ export function AddressFinder({ sampleText }: AddressFinderContainerProps): Reac
         }
     }, []);
     return (
-        <div>
+        <div className={classNames("mx-textbox form-group", props.class)}>
             {loaded && (
-                <Fragment>
+                <div className="col-12">
                     <WidgetInput
                         addressFinderKey={"ADDRESSFINDER_DEMO_KEY"}
-                        inputClassName={"fieldClassName"}
-                        id={"myid"} // todo: generate unique id
-                        name={"myName"}
+                        inputClassName={"form-control "}
+                        id={props.name + "_id"} // todo: generate unique id
+                        name={props.name + "_name"}
                         country={Country.NZ} // todo: make it configable
-                        onSelected={(fullAddress, address) => {
-                            console.log(fullAddress, address);
+                        onSelected={(fullAddress, address: Address) => {
+                            props.fullAddress?.setValue(fullAddress || "");
+                            props.line1?.setValue(address.line1 || "");
+                            props.line2?.setValue(address.line2 || "");
+                            props.suburb?.setValue(address.suburb || "");
+                            props.state?.setValue(address.state || "");
+                            props.postcode?.setValue(address.postcode || "");
+                            props.country?.setValue(address.country || "");
+                            props.city?.setValue(address.city || "");
                         }}
                     />
                     <div id="address-container-myid"></div>
-                </Fragment>
+                </div>
             )}
         </div>
     );

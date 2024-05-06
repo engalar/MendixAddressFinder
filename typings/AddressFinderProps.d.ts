@@ -4,13 +4,21 @@
  * @author Mendix Widgets Framework Team
  */
 import { CSSProperties } from "react";
+import { EditableValue } from "mendix";
 
 export interface AddressFinderContainerProps {
     name: string;
     class: string;
     style?: CSSProperties;
     tabIndex?: number;
-    sampleText: string;
+    fullAddress?: EditableValue<string>;
+    line1?: EditableValue<string>;
+    line2?: EditableValue<string>;
+    suburb?: EditableValue<string>;
+    state?: EditableValue<string>;
+    postcode?: EditableValue<string>;
+    country?: EditableValue<string>;
+    city?: EditableValue<string>;
 }
 
 export interface AddressFinderPreviewProps {
@@ -22,5 +30,12 @@ export interface AddressFinderPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
-    sampleText: string;
+    fullAddress: string;
+    line1: string;
+    line2: string;
+    suburb: string;
+    state: string;
+    postcode: string;
+    country: string;
+    city: string;
 }
