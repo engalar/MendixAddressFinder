@@ -26,6 +26,7 @@
     "release": "pluggable-widgets-tools release:web"
   },
   "devDependencies": {
+    "@engalar/vite-plugin-mendix": "^1.0.4",
     "@mendix/pluggable-widgets-tools": "^10.7.1",
     "@types/big.js": "^6.0.2",
     "@types/http-proxy": "^1.17.14",
