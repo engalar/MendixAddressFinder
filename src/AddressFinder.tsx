@@ -22,9 +22,9 @@ export function AddressFinder(props: AddressFinderContainerProps): ReactElement 
     return (
         <div className={classNames("mx-textbox form-group", props.class)}>
             <div className="col-12">
-                {loaded ? (
+                {loaded && props.apiKey.status === "available" ? (
                     <WidgetInput
-                        addressFinderKey={"ADDRESSFINDER_DEMO_KEY"}
+                        addressFinderKey={props.apiKey.value}
                         inputClassName={"form-control "}
                         id={props.name + "_id"} // todo: generate unique id
                         name={props.name + "_name"}

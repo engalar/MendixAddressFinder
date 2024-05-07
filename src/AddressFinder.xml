@@ -65,5 +65,12 @@
                 </attributeTypes>
             </property>
         </propertyGroup>
+        <propertyGroup caption="Options">
+            <!-- https://docs.mendix.com/apidocs-mxsdk/apidocs/pluggable-widgets-property-types/#413-studio-pro-ui -->
+            <property key="apiKey" type="textTemplate">
+                <caption>API Key</caption>
+                <description>API Key for the Address Finder API</description>
+            </property>
+        </propertyGroup>
     </properties>
 </widget>

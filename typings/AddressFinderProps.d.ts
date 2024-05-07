@@ -4,7 +4,7 @@
  * @author Mendix Widgets Framework Team
  */
 import { CSSProperties } from "react";
-import { EditableValue } from "mendix";
+import { DynamicValue, EditableValue } from "mendix";
 
 export interface AddressFinderContainerProps {
     name: string;
@@ -19,6 +19,7 @@ export interface AddressFinderContainerProps {
     postcode?: EditableValue<string>;
     country?: EditableValue<string>;
     city?: EditableValue<string>;
+    apiKey: DynamicValue<string>;
 }
 
 export interface AddressFinderPreviewProps {
@@ -38,4 +39,5 @@ export interface AddressFinderPreviewProps {
     postcode: string;
     country: string;
     city: string;
+    apiKey: string;
 }
