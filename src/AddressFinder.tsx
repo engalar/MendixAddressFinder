@@ -21,8 +21,8 @@ export function AddressFinder(props: AddressFinderContainerProps): ReactElement 
     }, []);
     return (
         <div className={classNames("mx-textbox form-group", props.class)}>
-            {loaded && (
-                <div className="col-12">
+            <div className="col-12">
+                {loaded ? (
                     <WidgetInput
                         addressFinderKey={"ADDRESSFINDER_DEMO_KEY"}
                         inputClassName={"form-control "}
@@ -40,9 +40,11 @@ export function AddressFinder(props: AddressFinderContainerProps): ReactElement 
                             props.city?.setValue(address.city || "");
                         }}
                     />
-                    <div id="address-container-myid"></div>
-                </div>
-            )}
+                ) : (
+                    <input disabled className="form-control  af-hidden-autofill-icon"></input>
+                )}
+                <div id="address-container-myid"></div>
+            </div>
         </div>
     );
 }
