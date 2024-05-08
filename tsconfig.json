@@ -6,7 +6,7 @@
   "include": [
     "./src",
     "./typings",
-    "./vite.config.ts",
+    "vite.config.cts",
     "main.ts",
   ]
 }
