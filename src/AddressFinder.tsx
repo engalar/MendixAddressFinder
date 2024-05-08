@@ -21,7 +21,7 @@ export function AddressFinder(props: AddressFinderContainerProps): ReactElement 
             setLoaded(true);
         }
     }, []);
-    const wrapperWidget = (
+    const wrapperInputWidget = (
         <Fragment>
             {loaded && props.apiKey.status === "available" ? (
                 <WidgetInput
@@ -48,23 +48,34 @@ export function AddressFinder(props: AddressFinderContainerProps): ReactElement 
             ) : (
                 <input disabled className="form-control af-hidden-autofill-icon"></input>
             )}
-            <div id="address-container-myid"></div>
         </Fragment>
     );
     return (
-        <div
-            className={classNames("widget-address-finder mx-textbox form-group", props.class, {
-                "no-columns": !showLabel
-            })}
-        >
-            {showLabel ? (
-                <Fragment>
-                    <label className="control-label col-sm-3">{labelText}</label>
-                    <div className="col-sm-9">{wrapperWidget}</div>
-                </Fragment>
-            ) : (
-                wrapperWidget
-            )}
-        </div>
+        <Fragment>
+            <div
+                className={classNames("widget-address-finder mx-textbox form-group", props.class, {
+                    "no-columns": !showLabel || props.formOrientation === "vertical"
+                })}
+            >
+                {showLabel ? (
+                    props.formOrientation === "vertical" ? (
+                        <Fragment>
+                            <label className={classNames("control-label")}>{labelText}</label>
+                            {wrapperInputWidget}
+                        </Fragment>
+                    ) : (
+                        <Fragment>
+                            <label className={classNames("control-label", "col-sm-" + props.labelWidth)}>
+                                {labelText}
+                            </label>
+                            <div className={classNames("col-sm-" + (12 - props.labelWidth))}>{wrapperInputWidget}</div>
+                        </Fragment>
+                    )
+                ) : (
+                    wrapperInputWidget
+                )}
+            </div>
+            <div id={"address-container-" + props.name + "_id"}></div>
+        </Fragment>
     );
 }

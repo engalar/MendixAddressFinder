@@ -19,6 +19,20 @@
                 <caption>Label Text</caption>
                 <description>Text for the label</description>
             </property>
+            <!-- Form orientation -->
+            <property key="formOrientation" type="enumeration" defaultValue="horizontal">
+                <caption>Form orientation</caption>
+                <description>Form orientation</description>
+                <enumerationValues>
+                    <enumerationValue key="horizontal">Horizontal</enumerationValue>
+                    <enumerationValue key="vertical">Vertical</enumerationValue>
+                </enumerationValues>
+            </property>
+            <!-- Label width(widght) -->
+            <property key="labelWidth" type="integer" defaultValue="3">
+                <caption>Label width</caption>
+                <description>Label width in pixels</description>
+            </property>
         </propertyGroup>
         <propertyGroup caption="Data">
             <property key="fullAddress" type="attribute" required="false">

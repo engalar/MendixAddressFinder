@@ -6,6 +6,8 @@
 import { CSSProperties } from "react";
 import { DynamicValue, EditableValue } from "mendix";
 
+export type FormOrientationEnum = "horizontal" | "vertical";
+
 export interface AddressFinderContainerProps {
     name: string;
     class: string;
@@ -13,6 +15,8 @@ export interface AddressFinderContainerProps {
     tabIndex?: number;
     showLabel: boolean;
     labelText: string;
+    formOrientation: FormOrientationEnum;
+    labelWidth: number;
     fullAddress?: EditableValue<string>;
     line1?: EditableValue<string>;
     line2?: EditableValue<string>;
@@ -35,6 +39,8 @@ export interface AddressFinderPreviewProps {
     readOnly: boolean;
     showLabel: boolean;
     labelText: string;
+    formOrientation: FormOrientationEnum;
+    labelWidth: number | null;
     fullAddress: string;
     line1: string;
     line2: string;
