@@ -11,6 +11,8 @@ export interface AddressFinderContainerProps {
     class: string;
     style?: CSSProperties;
     tabIndex?: number;
+    showLabel: boolean;
+    labelText: string;
     fullAddress?: EditableValue<string>;
     line1?: EditableValue<string>;
     line2?: EditableValue<string>;
@@ -31,6 +33,8 @@ export interface AddressFinderPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
+    showLabel: boolean;
+    labelText: string;
     fullAddress: string;
     line1: string;
     line2: string;

@@ -9,6 +9,18 @@
     <helpUrl>https://github.com/engalar/MendixAddressFinder/blob/main/README.md</helpUrl>
     <properties>
         <propertyGroup caption="General">
+            <!-- showLabel -->
+            <property key="showLabel" type="boolean" defaultValue="true">
+                <caption>Show Label</caption>
+                <description>Show label for the widget</description>
+            </property>
+            <!-- labelText -->
+            <property key="labelText" type="string" defaultValue="Label Text">
+                <caption>Label Text</caption>
+                <description>Text for the label</description>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Data">
             <property key="fullAddress" type="attribute" required="false">
                 <caption>Full Address</caption>
                 <description></description>

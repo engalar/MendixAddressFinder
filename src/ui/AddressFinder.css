@@ -1,6 +1,40 @@
-/*
-Place your custom CSS here
-*/
-.widget-hello-world {
+.widget-address-finder {
 
+    .widget-combobox-menu {
+        background-color: #fff;
+        border-radius: 7px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        display: inline;
+        left: unset;
+        list-style-type: "none";
+        margin: 4px 0;
+        padding: 10px 0 0;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .widget-combobox-item {
+        align-content: center;
+        align-items: center;
+        background-color: #fff;
+        color: #3b4251;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: fit-content;
+        overflow: hidden;
+        padding: 6px 10px;
+        user-select: none;
+    }
+
+    .widget-combobox-item-selected {
+        background-color: #e6eaff;
+    }
+
+    .widget-combobox-item-highlighted,
+    .widget-combobox-item:focus {
+        background-color: #f5f6f6;
+    }
 }
